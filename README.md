@@ -4,5 +4,5 @@ This boilerplate is a based for typescript node project at [TRIPTYK](https://www
 
 ## Usage
 ````
-npx degit https://github.com/TRIPTYK/TPK-TS-NODE-BOILERPLATE
+npx degit https://github.com/TRIPTYK/TPK-TS-NODE-BOILERPLATE projectName
 ```

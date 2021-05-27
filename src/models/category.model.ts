@@ -1,6 +1,6 @@
 import slugify from 'slugify';
 import { titleCase } from 'title-case';
-import { BeforeInsert, Column, Entity, JoinTable, ManyToMany} from 'typeorm';
+import { BeforeInsert, BeforeUpdate, Column, Entity, JoinTable, ManyToMany} from 'typeorm';
 import { Article } from './article.model';
 import { BaseModel } from './base.model';
 
@@ -26,6 +26,12 @@ class Category extends BaseModel {
 
   @BeforeInsert()
   slugit(){
+    this.slug=slugify(this.name);
+    this.name=titleCase(this.name);
+  };
+
+  @BeforeUpdate()
+  slugitForUpdate(){
     this.slug=slugify(this.name);
     this.name=titleCase(this.name);
   }

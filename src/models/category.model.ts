@@ -24,16 +24,12 @@ class Category extends BaseModel {
   })
   public articles?:Article[];
 
+  @BeforeUpdate()
   @BeforeInsert()
   slugit(){
     this.slug=slugify(this.name);
     this.name=titleCase(this.name);
   };
 
-  @BeforeUpdate()
-  slugitForUpdate(){
-    this.slug=slugify(this.name);
-    this.name=titleCase(this.name);
-  }
 };
 export{Category};
